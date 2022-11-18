@@ -6,10 +6,11 @@ Apache Tomcat 8 or 9; my preference is Tomcat v9.x
 Visited https://tomcat.apache.org/download-90.cgi
 
 Downloaded: apache-tomcat-9.0.48.tar.gz  
+(10/28/22: installing 9.0.68 on CPS MBP 2021)  
 Double-clicked the downloaded filename in Finder, which unzipped into Downloads folder  
 Renamed folder to apache-tomcat-9.0.48  
 Wanted to copy folder to: /Library  
-But, was not able to due to not having admin rights to mac  
+But, was not able to due to not having admin rights to BAH mac  
 
 So, created new folder for portable installs: ~/work  
 Copied apache-tomcat-9.0.48 folder to: ~/work  

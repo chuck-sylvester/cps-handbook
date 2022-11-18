@@ -315,10 +315,11 @@ I see lines in .zshrc (on one of my Macs) that indicate I’ve set the default J
 <h3 id="tomcat-installation"><a class="header" href="#tomcat-installation">Tomcat Installation</a></h3>
 <p>Visited https://tomcat.apache.org/download-90.cgi</p>
 <p>Downloaded: apache-tomcat-9.0.48.tar.gz<br />
+(10/28/22: installing 9.0.68 on CPS MBP 2021)<br />
 Double-clicked the downloaded filename in Finder, which unzipped into Downloads folder<br />
 Renamed folder to apache-tomcat-9.0.48<br />
 Wanted to copy folder to: /Library<br />
-But, was not able to due to not having admin rights to mac</p>
+But, was not able to due to not having admin rights to BAH mac</p>
 <p>So, created new folder for portable installs: ~/work<br />
 Copied apache-tomcat-9.0.48 folder to: ~/work</p>
 <p>Created ~/.zshrc file to make some configuration changes.</p>
@@ -339,13 +340,13 @@ $CATALINA_HOME/bin/catalina.sh stop
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-groovy"><a class="header" href="#apache-groovy">Apache Groovy</a></h1>
 <p><a href="https://groovy-lang.org/index.html">groovy-lang.org</a></p>
 <p>David's instructions indicate Groovy 3.0.7<br />
-The currently available version is Groovy 3.0.8</p>
+The currently available 3.x version is Groovy 3.0.8 (or higher)</p>
 <p>Downloaded and unzipped: groovy-3.0.8<br />
 Unzipped in the Downloads folder<br />
 Copied folder to /Library</p>
 <p><strong>CPS Note (10/8/22)</strong><br />
 I believe I used <code>~/work</code> as the location on my BAH MBP.<br />
-So, update all references to <code>/Library</code> to <code>~/work</code>.</p>
+So, update all references of <code>/Library</code> to <code>~/work</code> for BAH MBP.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="node"><a class="header" href="#node">Node</a></h1>
 <p>Install Node latest version with NPM.</p>
 <p>NPM is the important piece here, but node may be useful in the future.</p>
@@ -402,8 +403,11 @@ David’s confluence page now states:</p>
 </code></pre>
 <h2 id="integrated-development-environment-ide"><a class="header" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></h2>
 <p>Install and set up an IDE.</p>
-<p>IntelliJ Community Edition may have the most support in the team, but any IDE that is TRM approved will work.</p>
-<p>I plan to use Visual Studio Code.</p>
+<ul>
+<li>IntelliJ Community Edition is used by most of the JLV devs, but any TRM approved IDE will work</li>
+<li>I plan to use Visual Studio Code</li>
+<li>Or, my old favorite, BBEdit</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="environment"><a class="header" href="#environment">Environment</a></h1>
 <p>Once you have all of the prerequisite software installed you will need to do some configuration.</p>
 <p>Starting with environment variables, you can set your user account's variables, or use a script file to set them temporarily.</p>

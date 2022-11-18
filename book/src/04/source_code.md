@@ -22,6 +22,6 @@ git clone https://github.com/department-of-veterans-affairs/jlv-code.git
 ## Integrated Development Environment (IDE)
 Install and set up an IDE.  
 
-IntelliJ Community Edition may have the most support in the team, but any IDE that is TRM approved will work.  
-
-I plan to use Visual Studio Code.
+- IntelliJ Community Edition is used by most of the JLV devs, but any TRM approved IDE will work
+- I plan to use Visual Studio Code
+- Or, my old favorite, BBEdit
