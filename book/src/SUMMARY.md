@@ -3,8 +3,12 @@
 [Introduction](00/introduction.md)
 
 - [Git for People](01/git_for_people.md)
+    - [Getting Started](01/getting_started.md)
+    - [Working with Branches](01/git_branches.md)
+    - [Git Flow](01/git_flow.md)
 - [Java for People](02/java_for_people.md)
     - [Getting Started](02/getting_started.md)
+    - [Writing Code](02/writing_code.md)
     - [Compiling Code](02/compiling_code.md)
 - [Rust for People](03/rust_for_people.md)
     - [Rust Sub Section 2](03/subsection_two.md)

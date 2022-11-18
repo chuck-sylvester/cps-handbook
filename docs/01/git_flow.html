@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - CPS Handbook</title>
+        <title>Git Flow - CPS Handbook</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00/introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="../01/git_for_people.html"><strong aria-hidden="true">1.</strong> Git for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/getting_started.html"><strong aria-hidden="true">1.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../01/git_branches.html"><strong aria-hidden="true">1.2.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="../01/git_flow.html"><strong aria-hidden="true">1.3.</strong> Git Flow</a></li></ol></li><li class="chapter-item expanded "><a href="../02/java_for_people.html"><strong aria-hidden="true">2.</strong> Java for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02/getting_started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../02/writing_code.html"><strong aria-hidden="true">2.2.</strong> Writing Code</a></li><li class="chapter-item expanded "><a href="../02/compiling_code.html"><strong aria-hidden="true">2.3.</strong> Compiling Code</a></li></ol></li><li class="chapter-item expanded "><a href="../03/rust_for_people.html"><strong aria-hidden="true">3.</strong> Rust for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03/subsection_two.html"><strong aria-hidden="true">3.1.</strong> Rust Sub Section 2</a></li></ol></li><li class="chapter-item expanded "><a href="../04/jlv_dev_setup.html"><strong aria-hidden="true">4.</strong> JLV Dev Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04/java_setup.html"><strong aria-hidden="true">4.1.</strong> Java Setup</a></li><li class="chapter-item expanded "><a href="../04/apache_tomcat.html"><strong aria-hidden="true">4.2.</strong> Apache Tomcat</a></li><li class="chapter-item expanded "><a href="../04/apache_groovy.html"><strong aria-hidden="true">4.3.</strong> Apache Groovy</a></li><li class="chapter-item expanded "><a href="../04/node_setup.html"><strong aria-hidden="true">4.4.</strong> Node</a></li><li class="chapter-item expanded "><a href="../04/source_code.html"><strong aria-hidden="true">4.5.</strong> Source Code</a></li><li class="chapter-item expanded "><a href="../04/environment.html"><strong aria-hidden="true">4.6.</strong> Environment</a></li><li class="chapter-item expanded "><a href="../04/build_deploy.html"><strong aria-hidden="true">4.7.</strong> Build and Deploy</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00/introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../01/git_for_people.html"><strong aria-hidden="true">1.</strong> Git for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/getting_started.html"><strong aria-hidden="true">1.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../01/git_branches.html"><strong aria-hidden="true">1.2.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="../01/git_flow.html" class="active"><strong aria-hidden="true">1.3.</strong> Git Flow</a></li></ol></li><li class="chapter-item expanded "><a href="../02/java_for_people.html"><strong aria-hidden="true">2.</strong> Java for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02/getting_started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../02/writing_code.html"><strong aria-hidden="true">2.2.</strong> Writing Code</a></li><li class="chapter-item expanded "><a href="../02/compiling_code.html"><strong aria-hidden="true">2.3.</strong> Compiling Code</a></li></ol></li><li class="chapter-item expanded "><a href="../03/rust_for_people.html"><strong aria-hidden="true">3.</strong> Rust for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03/subsection_two.html"><strong aria-hidden="true">3.1.</strong> Rust Sub Section 2</a></li></ol></li><li class="chapter-item expanded "><a href="../04/jlv_dev_setup.html"><strong aria-hidden="true">4.</strong> JLV Dev Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04/java_setup.html"><strong aria-hidden="true">4.1.</strong> Java Setup</a></li><li class="chapter-item expanded "><a href="../04/apache_tomcat.html"><strong aria-hidden="true">4.2.</strong> Apache Tomcat</a></li><li class="chapter-item expanded "><a href="../04/apache_groovy.html"><strong aria-hidden="true">4.3.</strong> Apache Groovy</a></li><li class="chapter-item expanded "><a href="../04/node_setup.html"><strong aria-hidden="true">4.4.</strong> Node</a></li><li class="chapter-item expanded "><a href="../04/source_code.html"><strong aria-hidden="true">4.5.</strong> Source Code</a></li><li class="chapter-item expanded "><a href="../04/environment.html"><strong aria-hidden="true">4.6.</strong> Environment</a></li><li class="chapter-item expanded "><a href="../04/build_deploy.html"><strong aria-hidden="true">4.7.</strong> Build and Deploy</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,13 +134,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+                        <h1 id="git-flow"><a class="header" href="#git-flow">Git Flow</a></h1>
+<p>This workflow uses three types of branches:</p>
+<div class="table-wrapper"><table><thead><tr><th>Branch Name</th><th>Description</th></tr></thead><tbody>
+<tr><td>main</td><td>long-lived and contains each of the major product versions</td></tr>
+<tr><td>develop</td><td>long-lived and serves as the integraton and build branch</td></tr>
+<tr><td>feature</td><td>multiple, short-lived branches used by individual developers</td></tr>
+</tbody></table>
+</div>
+<p>The first step is to complement the default <em><strong>main</strong></em> with a <em><strong>develop</strong></em> branch. A simple way to do this is for one developer to create an empty develop branch locally and push it to the server:</p>
+<pre><code class="language-bash">git branch develop
+git push -u origin develop
+</code></pre>
+<p>This branch will contain the complete history of the project, whereas main will contain an abridged version. Other developers should now clone the central repository and create a tracking branch for develop.</p>
+<p><strong>Feature Branches</strong>
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of main, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with main.</p>
+<p><strong>Finishing a feature branch</strong>
+When you’re done with the development work on the feature, the next step is to merge the feature_branch into develop.</p>
+<pre><code class="language-bash">git checkout develop
+git merge feature_branch
+</code></pre>
+<p>We preceed merges with a Pull Request (PR) and approval. Then, we typically use GitHub to perform the merger from the feature branch into the develop branch.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="../01/git_for_people.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="../01/git_branches.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../02/java_for_people.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -149,7 +172,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="../01/git_for_people.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="../01/git_branches.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../02/java_for_people.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
