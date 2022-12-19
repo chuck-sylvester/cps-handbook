@@ -6,6 +6,12 @@ NPM is the important piece here, but node may be useful in the future.
 
 Installed/updated Node (a while back, I believe)
 
+```
+which npm
+
+/usr/local/bin/npm
+```
+
 [nodejs.org](https://nodejs.org/en/)
 
 To show npm version:  

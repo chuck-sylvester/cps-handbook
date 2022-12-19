@@ -8,7 +8,7 @@ The first time you are building the application, you will need to run:
 npm install
 ```
 
-This will add a node-modules folder and begin to download a number of dependencies.  
+This will add a **node-modules** folder and begin to download a number of dependencies.  
 
 This command will likely error out with complaints regarding missing Python or Visual Studio. This is normal and once you reach those errors, you are done. If you see a different error, that will need to be troubleshot. If the error is about a self-signed certificate, go back and double check the npm cert step.
 
@@ -35,7 +35,9 @@ JLV/src/main/resources/static/javascripts/react-client
 This includes app.js, as David indicates in his notes.
 
 Navigate back to /JLV and run:  
+```
 mvn clean install -DskipTests -Ptomcat -Dhttps.protocols=TLSv1.2
+```
 
 This will build, package and deploy to tomcat. 
 

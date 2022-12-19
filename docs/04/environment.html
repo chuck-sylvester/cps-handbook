@@ -138,12 +138,14 @@
 <p>Once you have all of the prerequisite software installed you will need to do some configuration.</p>
 <p>Starting with environment variables, you can set your user account's variables, or use a script file to set them temporarily.</p>
 <p>The variables to set and some sample values are as follows:</p>
+<p>Windows Setting:</p>
 <pre><code>JRE_HOME=C:\Work\jdk1.8.0_261
 </code></pre>
 <p>Added the following line to ~/.zshrc</p>
 <pre><code>JRE_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 </code></pre>
 <p>Check value of the environment variable:</p>
+<p>Windows info:</p>
 <pre><code>echo $JRE_HOME
 </code></pre>
 <pre><code>JAVA_HOME=C:\Work\jdk1.8.0_261
@@ -159,6 +161,7 @@
 <pre><code>export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 </code></pre>
 <p>See comment above about the need to include the “export” part of this statement in .zshrc.</p>
+<p>Windows info:</p>
 <pre><code>CATALINA_BASE=C:\Work\apache-tomcat-9.0.44
 CATALINA_HOME=C:\Work\apache-tomcat-9.0.44
 </code></pre>
@@ -166,11 +169,13 @@ CATALINA_HOME=C:\Work\apache-tomcat-9.0.44
 <pre><code>CATALINA_BASE=/Library/apache-tomcat-9
 CATALINA_HOME=/Library/apache-tomcat-9
 </code></pre>
+<p>Windows info:</p>
 <pre><code>GROOVY_HOME=C:\Work\groovy-3.0.7  
 </code></pre>
 <p>Updated .zshrc to include environment variable:</p>
 <pre><code>GROOVY_HOME=/Library/groovy-3.0.8  
 </code></pre>
+<p><strong>Maven Setup</strong></p>
 <pre><code>MAVEN_HOME=C:\Work\apache-maven-3.6.3
 </code></pre>
 <p>Verify that Maven can be found from OS:</p>
@@ -182,6 +187,17 @@ CATALINA_HOME=/Library/apache-tomcat-9
 </code></pre>
 <p>Is this required for my mac?</p>
 <p>The “mvn -v” command above found maven, so maybe I’m good.</p>
+<blockquote>
+<p>12/13/22 Update: this command is no longer finding Maven on my personal or BAH MBP. So, followed online instructions to download and install Maven on MacOS, as described below.</p>
+</blockquote>
+<p>Visited https://maven.apache.org/download.cgi and selected the Binary tar.gz archive (v3.8.6).<br />
+Used tar command to unzip into Downloads folder.<br />
+Moved newly created apache-mavin-3.8.6 folder to ~/swtool.<br />
+Added the following to ~/.zshrc</p>
+<pre><code>MAVEN_HOME=~/swtool/apache-maven-3.8.6
+export PATH=$MAVEN_HOME/bin:$PATH
+</code></pre>
+<p>Verified by running <code>mvn -v</code>.</p>
 <pre><code>%JAVA_HOME%\bin
 </code></pre>
 <p>Is this required for my mac?<br />
@@ -195,7 +211,7 @@ I am able to run java commands from the command line.</p>
 This needs to be the location of your NPM executable if you are not using the Node version.</p>
 <p>Tomcat needs some additional setup. Those instructions can be found in the jMeadows/VDS guide. Make sure you have added the custom batch files, the database driver, and the certs needed to access external endpoints.</p>
 <p>NPM will need certs added in order for it to function correctly with the VA VPN.</p>
-<p>You will want to tell it where the cacert file is to use with the command:</p>
+<p>You will want to tell it the location of the <strong>cacert</strong> file to use with the command:</p>
 <pre><code>% npm config set cafile /path/to/cert.pem
 </code></pre>
 <p>The certificate can be the same one that you may have configured for git.<br />

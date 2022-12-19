@@ -136,6 +136,7 @@
                     <main>
                         <h1 id="writing-code"><a class="header" href="#writing-code">Writing Code</a></h1>
 <h2 id="basic-java-class-file-structure"><a class="header" href="#basic-java-class-file-structure">Basic Java Class File Structure</a></h2>
+<p>Addition.java</p>
 <pre><code class="language-java">// Couple of lines to introduce program
 // Lorem Ipsum
 
@@ -144,7 +145,7 @@ package com.csylvester.sample;
 import java.util.Scanner;
 
 public class Addition {
-
+   
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
  
@@ -157,8 +158,15 @@ public class Addition {
       System.out.print(&quot;Enter second integer: &quot;);
       number2 = input.nextInt();
       
-      sum = number1 + number2;
+      sum = getSum(number1, number2);
       System.out.printf(&quot;Sum is %d%n&quot;, sum);
+
+      // close scanner
+      input.close();
+   }
+
+   public static int getSum(int int1, int int2) {
+      return int1 + int2;
    }
 }
 </code></pre>

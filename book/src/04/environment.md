@@ -6,6 +6,7 @@ Starting with environment variables, you can set your user account's variables, 
 
 The variables to set and some sample values are as follows:
 
+Windows Setting:
 ```
 JRE_HOME=C:\Work\jdk1.8.0_261
 ```
@@ -16,6 +17,8 @@ JRE_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 ```
 
 Check value of the environment variable:
+
+Windows info:
 ```
 echo $JRE_HOME
 ```
@@ -45,6 +48,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Conten
 
 See comment above about the need to include the “export” part of this statement in .zshrc.  
 
+Windows info:
 ```
 CATALINA_BASE=C:\Work\apache-tomcat-9.0.44
 CATALINA_HOME=C:\Work\apache-tomcat-9.0.44
@@ -56,6 +60,7 @@ CATALINA_BASE=/Library/apache-tomcat-9
 CATALINA_HOME=/Library/apache-tomcat-9
 ```
 
+Windows info:
 ```
 GROOVY_HOME=C:\Work\groovy-3.0.7  
 ```
@@ -65,6 +70,7 @@ Updated .zshrc to include environment variable:
 GROOVY_HOME=/Library/groovy-3.0.8  
 ```
 
+**Maven Setup**
 ```
 MAVEN_HOME=C:\Work\apache-maven-3.6.3
 ```
@@ -86,6 +92,19 @@ You will also need to adjust your path variable and ensure you have these entrie
 Is this required for my mac?  
 
 The “mvn -v” command above found maven, so maybe I’m good.  
+
+> 12/13/22 Update: this command is no longer finding Maven on my personal or BAH MBP. So, followed online instructions to download and install Maven on MacOS, as described below.
+
+Visited https://maven.apache.org/download.cgi and selected the Binary tar.gz archive (v3.8.6).  
+Used tar command to unzip into Downloads folder.  
+Moved newly created apache-mavin-3.8.6 folder to ~/swtool.  
+Added the following to ~/.zshrc
+```
+MAVEN_HOME=~/swtool/apache-maven-3.8.6
+export PATH=$MAVEN_HOME/bin:$PATH
+```
+
+Verified by running `mvn -v`.  
 
 ```
 %JAVA_HOME%\bin
@@ -110,7 +129,7 @@ Tomcat needs some additional setup. Those instructions can be found in the jMead
 
 NPM will need certs added in order for it to function correctly with the VA VPN.
 
-You will want to tell it where the cacert file is to use with the command:
+You will want to tell it the location of the **cacert** file to use with the command:
 ```
 % npm config set cafile /path/to/cert.pem
 ```

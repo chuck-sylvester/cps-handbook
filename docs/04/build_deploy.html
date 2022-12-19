@@ -140,7 +140,7 @@ Continue to: /JLV/react-client</p>
 <p>The first time you are building the application, you will need to run:</p>
 <pre><code>npm install
 </code></pre>
-<p>This will add a node-modules folder and begin to download a number of dependencies.</p>
+<p>This will add a <strong>node-modules</strong> folder and begin to download a number of dependencies.</p>
 <p>This command will likely error out with complaints regarding missing Python or Visual Studio. This is normal and once you reach those errors, you are done. If you see a different error, that will need to be troubleshot. If the error is about a self-signed certificate, go back and double check the npm cert step.</p>
 <p>Once install is done, run:</p>
 <pre><code>npm run-script build
@@ -156,8 +156,9 @@ This step resulted in the creation of a ton of new artifacts in:</p>
 <pre><code>JLV/src/main/resources/static/javascripts/react-client
 </code></pre>
 <p>This includes app.js, as David indicates in his notes.</p>
-<p>Navigate back to /JLV and run:<br />
-mvn clean install -DskipTests -Ptomcat -Dhttps.protocols=TLSv1.2</p>
+<p>Navigate back to /JLV and run:</p>
+<pre><code>mvn clean install -DskipTests -Ptomcat -Dhttps.protocols=TLSv1.2
+</code></pre>
 <p>This will build, package and deploy to tomcat. </p>
 <p>Edited JLV/pom.xml to try and get it to work on MacOS.</p>
 <p>2/23/22 update:<br />
