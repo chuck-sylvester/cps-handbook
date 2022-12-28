@@ -10,5 +10,5 @@ Unzipped in the Downloads folder
 Copied folder to /Library
 
 **CPS Note (10/8/22)**  
-I believe I used `~/work` as the location on my BAH MBP.  
-So, update all references of `/Library` to `~/work` for BAH MBP.  
+I believe I used `~/swtool` as the location on my BAH MBP.  
+So, update all references of `/Library` to `~/swtool` for BAH MBP.  
