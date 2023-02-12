@@ -7,6 +7,7 @@
     - [Working with Branches](01/git_branches.md)
     - [Git Flow](01/git_flow.md)
 - [C++ for People](02/cpp_for_people.md)
+    - [Getting Started](02/getting_started.md)
 - [Java for People](03/java_for_people.md)
     - [Getting Started](03/getting_started.md)
     - [Writing Code](03/writing_code.md)
