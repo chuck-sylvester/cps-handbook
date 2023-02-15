@@ -1,77 +1,44 @@
 # Getting Started
 
-### Check Installed Java Versions
-To show the current active Java version:
+### Dev Tools
+My editor of choice is **Visual Studio Code**. However, since I'm following along with both the Deitel and Cherno courses, which both suggsest **Visual Studio**, I'll go ahead and give that a try.
 
+Downloaded Visual Studio Community Edition. Tried to install on my mac, but it turned out to be an exe file, which I presume only works on Windows. Visual Studio for Mac is focused on .NET and C#, as opposd to C++, so that's not going to work.
+
+So, I'll stick with Visual Studio Code, which should be fine.
+
+### Verify C++ Compiler
 ```bash
-java -version
+g++ -v
 ```
 
-To show where MacOS see's Java, use the followig commands:
-
+### Basic Compile Command
 ```bash
-which java
-whereis java
+g++ -o ./target-filename ./source-filename.cpp
 ```
 
-To show installed Java versions, use one of the following command:
-
-```bash
-/usr/libexec/java_home --verbose
-/usr/libexec/java_home -V
+You can create the executable with or without a filename extension, e.g.:  
+```
+g++ -o ./target-filename.exe ./source-filename.cpp
 ```
 
-### Set the Default Java Version for a Terminal Session
-Run the following command with the desired Java version as the final parameter:
-
-```bash
-export JAVA_HOME=`/usr/libexec/java_home -v 0.00.0_000`
+If you would like to output the executable to a different folder, such as ./target, this folder must already exist. Otherwise, the compiler will throw an error, e.g.:  
+```
+ld: can't open output file for writing:  
+        target/prog1.exe, errno=2 for architecture arm64
 ```
 
-To make this change permanent, set it in your shell init file. For example, if you are using bash, you can set the command in .bash_profile. Add the following sample lines at the end of the file:
-
-```bash
-# Setting default JDK to version 1.8
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+To ensure that clang is using more current compiler features, e.g., C++ 11, use the following compile format:
+```
+g++ -std=c++11 -o ./target-filename ./source-filename.cpp
 ```
 
-To activate this configuration right away, run the following command:
-
+### Run Executable File
 ```bash
-source .bash_profile
-```
-**Note:** See "Environment Variables" section below for instructions on setting both JAVA_HOME and JRE_HOME.
-
-This command reads and executes the .bash_profile in the currently running shell.
-
-### Install Java
-My inclination was to go with Amazon Corretto OpenJDK 8. However, Visual Studio Code add-ins only work with Java 11 and above.
-
-So, went with Amazon Corretto OpenJDK 11.
-
-```bash
-https://aws.amazon.com/corretto/
-https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html
+./target-filename
 ```
 
-Download the appropriate installer package, e.g.:
-> amazon-corretto-11.0.12.7.2-macosx-x64.pkg
-
-Then, double-click to start the installer.
-
-When complete, Corretto should be located on your main disk volume at:
-> Macintosh HD > Library > Java > JavaVirtualMachines
-
-### Set Environment Variables
-After installing Java, you will need to do some configuration, such as setting environment variables.
-
-Add the following lines to ~/.zshrc
- - create file if it doesn't exist
- - not sure why export statement is used for one of the two lines
-```bash
-# Set Java version to Corretto 11
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-JRE_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+Remember to include the filename extension, if it has one, e.g.  
 ```
-
-*Done and Dusted*
+./target-filename.exe
+```

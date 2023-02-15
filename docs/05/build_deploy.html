@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Source Code - CPS Handbook</title>
+        <title>Build and Deploy - CPS Handbook</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00/introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../01/git_for_people.html"><strong aria-hidden="true">1.</strong> Git for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/getting_started.html"><strong aria-hidden="true">1.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../01/git_branches.html"><strong aria-hidden="true">1.2.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="../01/git_flow.html"><strong aria-hidden="true">1.3.</strong> Git Flow</a></li></ol></li><li class="chapter-item expanded "><a href="../02/java_for_people.html"><strong aria-hidden="true">2.</strong> Java for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02/getting_started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../02/writing_code.html"><strong aria-hidden="true">2.2.</strong> Writing Code</a></li><li class="chapter-item expanded "><a href="../02/compiling_code.html"><strong aria-hidden="true">2.3.</strong> Compiling Code</a></li></ol></li><li class="chapter-item expanded "><a href="../03/rust_for_people.html"><strong aria-hidden="true">3.</strong> Rust for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03/subsection_two.html"><strong aria-hidden="true">3.1.</strong> Rust Sub Section 2</a></li></ol></li><li class="chapter-item expanded "><a href="../04/jlv_dev_setup.html"><strong aria-hidden="true">4.</strong> JLV Dev Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04/java_setup.html"><strong aria-hidden="true">4.1.</strong> Java Setup</a></li><li class="chapter-item expanded "><a href="../04/apache_tomcat.html"><strong aria-hidden="true">4.2.</strong> Apache Tomcat</a></li><li class="chapter-item expanded "><a href="../04/apache_groovy.html"><strong aria-hidden="true">4.3.</strong> Apache Groovy</a></li><li class="chapter-item expanded "><a href="../04/node_setup.html"><strong aria-hidden="true">4.4.</strong> Node</a></li><li class="chapter-item expanded "><a href="../04/source_code.html" class="active"><strong aria-hidden="true">4.5.</strong> Source Code</a></li><li class="chapter-item expanded "><a href="../04/environment.html"><strong aria-hidden="true">4.6.</strong> Environment</a></li><li class="chapter-item expanded "><a href="../04/build_deploy.html"><strong aria-hidden="true">4.7.</strong> Build and Deploy</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00/introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../01/git_for_people.html"><strong aria-hidden="true">1.</strong> Git for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01/getting_started.html"><strong aria-hidden="true">1.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../01/git_branches.html"><strong aria-hidden="true">1.2.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="../01/git_flow.html"><strong aria-hidden="true">1.3.</strong> Git Flow</a></li></ol></li><li class="chapter-item expanded "><a href="../02/cpp_for_people.html"><strong aria-hidden="true">2.</strong> C++ for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02/getting_started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li></ol></li><li class="chapter-item expanded "><a href="../03/java_for_people.html"><strong aria-hidden="true">3.</strong> Java for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03/getting_started.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../03/writing_code.html"><strong aria-hidden="true">3.2.</strong> Writing Code</a></li><li class="chapter-item expanded "><a href="../03/compiling_code.html"><strong aria-hidden="true">3.3.</strong> Compiling Code</a></li></ol></li><li class="chapter-item expanded "><a href="../04/rust_for_people.html"><strong aria-hidden="true">4.</strong> Rust for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04/subsection_two.html"><strong aria-hidden="true">4.1.</strong> Rust Sub Section 2</a></li></ol></li><li class="chapter-item expanded "><a href="../05/jlv_dev_setup.html"><strong aria-hidden="true">5.</strong> JLV Dev Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05/java_setup.html"><strong aria-hidden="true">5.1.</strong> Java Setup</a></li><li class="chapter-item expanded "><a href="../05/apache_tomcat.html"><strong aria-hidden="true">5.2.</strong> Apache Tomcat</a></li><li class="chapter-item expanded "><a href="../05/apache_groovy.html"><strong aria-hidden="true">5.3.</strong> Apache Groovy</a></li><li class="chapter-item expanded "><a href="../05/node_setup.html"><strong aria-hidden="true">5.4.</strong> Node</a></li><li class="chapter-item expanded "><a href="../05/source_code.html"><strong aria-hidden="true">5.5.</strong> Source Code</a></li><li class="chapter-item expanded "><a href="../05/environment.html"><strong aria-hidden="true">5.6.</strong> Environment</a></li><li class="chapter-item expanded "><a href="../05/build_deploy.html" class="active"><strong aria-hidden="true">5.7.</strong> Build and Deploy</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,43 +134,65 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="source-code"><a class="header" href="#source-code">Source Code</a></h1>
-<h2 id="clone-to-local-dev-environment"><a class="header" href="#clone-to-local-dev-environment">Clone to Local Dev Environment</a></h2>
-<p>JLV source code downloaded from the develop-react-refactor branch</p>
-<ul>
-<li>For testing your build, this base branch will work</li>
-<li>For doing story work, create a feature or bugfix branch based off of it</li>
-</ul>
-<p>Since Steven has done some maintenance of jlv-code, I did a full clone from the <strong><em>main</em></strong> branch.</p>
-<p>2/23/22 update:
-David’s confluence page now states:</p>
-<ul>
-<li>JLV code downloaded from the latest 3.0 branch
-<ul>
-<li>For testing your build, this base branch will work. For doing story work, create a feature or bugfix branch based off of it.</li>
-</ul>
-</li>
-</ul>
-<p>I asked David to clarify, and he confirmed that we can simply clone the jlv-code repository and then work from whatever branch is desired locally. For example, he mentioned using “develop” as the base branch from which we branch from for our specific work.</p>
-<p>Here's what I did:</p>
-<pre><code>git clone https://github.com/department-of-veterans-affairs/jlv-code.git
+                        <h1 id="build-and-deploy"><a class="header" href="#build-and-deploy">Build and Deploy</a></h1>
+<p>Navigate to your project code folder with a command prompt or powershell prompt.<br />
+Continue to: /JLV/react-client</p>
+<p>The first time you are building the application, you will need to run:</p>
+<pre><code>npm install
 </code></pre>
-<h2 id="integrated-development-environment-ide"><a class="header" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></h2>
-<p>Install and set up an IDE.</p>
-<ul>
-<li>IntelliJ Community Edition is used by most of the JLV devs, but any TRM approved IDE will work</li>
-<li>I plan to use Visual Studio Code</li>
-</ul>
+<p>This will add a <strong>node-modules</strong> folder and begin to download a number of dependencies.</p>
+<p>This command will likely error out with complaints regarding missing Python or Visual Studio. This is normal and once you reach those errors, you are done. If you see a different error, that will need to be troubleshot. If the error is about a self-signed certificate, go back and double check the npm cert step.</p>
+<p>Once install is done, run:</p>
+<pre><code>npm run-script build
+</code></pre>
+<p>2/23/22 update:<br />
+David’s instructions now say to run:</p>
+<pre><code>npm run build
+</code></pre>
+<p>This will take a minute and will build a handful of artifacts, including an app.js.</p>
+<p>If this succeeds, you are done with NPM for now.</p>
+<p>2/23/22 update:<br />
+This step resulted in the creation of a ton of new artifacts in:</p>
+<pre><code>JLV/src/main/resources/static/javascripts/react-client
+</code></pre>
+<p>This includes app.js, as David indicates in his notes.</p>
+<p>Navigate back to /JLV and run:</p>
+<pre><code>mvn clean install -DskipTests -Ptomcat -Dhttps.protocols=TLSv1.2
+</code></pre>
+<p>This will build, package and deploy to tomcat. </p>
+<p>Edited JLV/pom.xml to try and get it to work on MacOS.</p>
+<p>2/23/22 update:<br />
+This step failed. One of the errors points to the lack of a .bat file related to shutting down Catalina.<br />
+Perhaps I need to create a .sh version, or change the POM (or whatever) to use the .sh as opposed to the .bat.</p>
+<h2 id="building-for-development"><a class="header" href="#building-for-development">Building for Development</a></h2>
+<p>If you make changes to the groovy controllers or java files, the mvn command is all you need to use to rebuild.</p>
+<p>If you make changes to css or javascript files, you will need to run the npm build command.</p>
+<p>When working with the javascript files during development, you will want to use one of the development NPM script options. These add source maps that will allow you to set breakpoints while using the browser debugger.</p>
+<p>The first option is:</p>
+<pre><code>npm run-script start
+</code></pre>
+<p>or</p>
+<pre><code>npm start
+</code></pre>
+<p>This will put npm in a file watcher mode that updates the app.js artifact anytime you make changes to the project files.
+You will still need to package and deploy the changes with a Maven command if you want to use those changes.</p>
+<p>Another option is:</p>
+<pre><code>npm run-script tomcatwatcher
+</code></pre>
+<p>This will also start a file watcher, but the output will be directly into the tomcat instance. This is useful when you are only updating javascript files and want to test changes faster.</p>
+<p>A couple of notes for the tomcat watcher:</p>
+<ol>
+<li>If you redeploy the whole JLV component with a maven command, you will need to restart the file watcher or make a change that causes an app.js update.</li>
+<li>If you are not using the default JLV context, change the 'context' variable in webpack.config.tomcat.js to the appropriate value.</li>
+<li>For both file watchers, there is a bit of a delay before the changes are compiled and copied over. Make sure to give it enough time before refreshing your test page.</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../04/node_setup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../05/environment.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../04/environment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -178,11 +200,8 @@ David’s confluence page now states:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../04/node_setup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../05/environment.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../04/environment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
