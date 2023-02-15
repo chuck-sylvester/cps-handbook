@@ -24,4 +24,3 @@ Install and set up an IDE.
 
 - IntelliJ Community Edition is used by most of the JLV devs, but any TRM approved IDE will work
 - I plan to use Visual Studio Code
-- Or, my old favorite, BBEdit
