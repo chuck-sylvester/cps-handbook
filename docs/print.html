@@ -460,9 +460,21 @@ The currently available 3.x version is Groovy 3.0.8 (or higher)</p>
 <p>Downloaded and unzipped: groovy-3.0.8<br />
 Unzipped in the Downloads folder<br />
 Copied folder to /Library</p>
-<p><strong>CPS Note (10/8/22)</strong><br />
-I believe I used <code>~/swtool</code> as the location on my BAH MBP.<br />
+<h3 id="cps-note-10822"><a class="header" href="#cps-note-10822">CPS Note (10/8/22)</a></h3>
+<p>I believe I used <code>~/swtool</code> as the location on my BAH MBP.<br />
 So, update all references of <code>/Library</code> to <code>~/swtool</code> for BAH MBP.</p>
+<h3 id="validate-groovy-installation"><a class="header" href="#validate-groovy-installation">Validate Groovy Installation</a></h3>
+<p>The following information is from <a href="https://groovy-lang.org/install.html">groovy-lang.org/install</a></p>
+<p>Validate Groovy install by typing the following in a command shell:</p>
+<pre><code>groovysh
+</code></pre>
+<p>Which should create an interactive groovy shell that accepts Groovy statements.</p>
+<p>To run the Swing interactive console type:</p>
+<pre><code>groovyConsole
+</code></pre>
+<p>To run a specific Groovy script type:</p>
+<pre><code>groovy SomeScript
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="node"><a class="header" href="#node">Node</a></h1>
 <p>Install Node latest version with NPM.</p>
 <p>NPM is the important piece here, but node may be useful in the future.</p>
@@ -526,7 +538,6 @@ David’s confluence page now states:</p>
 <ul>
 <li>IntelliJ Community Edition is used by most of the JLV devs, but any TRM approved IDE will work</li>
 <li>I plan to use Visual Studio Code</li>
-<li>Or, my old favorite, BBEdit</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="environment"><a class="header" href="#environment">Environment</a></h1>
 <p>Once you have all of the prerequisite software installed you will need to do some configuration.</p>
@@ -584,10 +595,13 @@ CATALINA_HOME=/Library/apache-tomcat-9
 <blockquote>
 <p>12/13/22 Update: this command is no longer finding Maven on my personal or BAH MBP. So, followed online instructions to download and install Maven on MacOS, as described below.</p>
 </blockquote>
-<p>Visited https://maven.apache.org/download.cgi and selected the Binary tar.gz archive (v3.8.6).<br />
-Used tar command to unzip into Downloads folder.<br />
-Moved newly created apache-mavin-3.8.6 folder to ~/swtool.<br />
-Added the following to ~/.zshrc</p>
+<ul>
+<li>Visited <a href="https://maven.apache.org/download.cgi">maven.apache.org/download</a></li>
+<li>Selected the Binary tar.gz archive (v3.8.6)</li>
+<li>Used tar command to unzip into Downloads folder</li>
+<li>Moved newly created apache-mavin-3.8.6 folder to ~/swtool</li>
+<li>Added the following to ~/.zshrc</li>
+</ul>
 <pre><code>MAVEN_HOME=~/swtool/apache-maven-3.8.6
 export PATH=$MAVEN_HOME/bin:$PATH
 </code></pre>
@@ -611,7 +625,15 @@ This needs to be the location of your NPM executable if you are not using the No
 <p>The certificate can be the same one that you may have configured for git.<br />
 NOTE: This command support multiple file formats and might not be a .pem file. It may also be a .crt or .jks file.</p>
 <p>In the JLV code, you will want to update the properties file.</p>
-<p>The only property file you should need to modify is <strong>application-development.propeties</strong> (or production) and the only property that should be modified for a basic setup is the jMeadows URL. Set it to your local instance if you have one, or you can get the silver instance config from another developer.</p>
+<p>The only property file you should need to modify is:</p>
+<blockquote>
+<p>application-development.propeties (or application-production.properties)</p>
+</blockquote>
+<p>The only property that should be modified for a basic setup is the:</p>
+<blockquote>
+<p>jMeadows URL</p>
+</blockquote>
+<p>Set it to your local instance if you have one, or you can get the silver instance config from another developer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="build-and-deploy"><a class="header" href="#build-and-deploy">Build and Deploy</a></h1>
 <p>Navigate to your project code folder with a command prompt or powershell prompt.<br />
 Continue to: /JLV/react-client</p>
