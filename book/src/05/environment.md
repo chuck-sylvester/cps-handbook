@@ -96,8 +96,8 @@ The “mvn -v” command above found maven, so maybe I’m good.
 > 12/13/22 Update: this command is no longer finding Maven on my personal or BAH MBP. So, followed online instructions to download and install Maven on MacOS, as described below.
 
 - Visited [maven.apache.org/download](https://maven.apache.org/download.cgi)
-- Selected the Binary tar.gz archive (v3.8.6)
-- Used tar command to unzip into Downloads folder
+- Selected the Binary tar.gz archive (v3.8.6) [2/25/23: mbp 2019 => v3.9.0]
+- Used tar command to unzip into Downloads folder [2/25/23: mbp 2019 => double clicked on tar.gz file to extract]
 - Moved newly created apache-mavin-3.8.6 folder to ~/swtool
 - Added the following to ~/.zshrc
 ```
