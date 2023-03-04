@@ -95,10 +95,11 @@ The “mvn -v” command above found maven, so maybe I’m good.
 
 > 12/13/22 Update: this command is no longer finding Maven on my personal or BAH MBP. So, followed online instructions to download and install Maven on MacOS, as described below.
 
-Visited https://maven.apache.org/download.cgi and selected the Binary tar.gz archive (v3.8.6).  
-Used tar command to unzip into Downloads folder.  
-Moved newly created apache-mavin-3.8.6 folder to ~/swtool.  
-Added the following to ~/.zshrc
+- Visited [maven.apache.org/download](https://maven.apache.org/download.cgi)
+- Selected the Binary tar.gz archive (v3.8.6) [2/25/23: mbp 2019 => v3.9.0]
+- Used tar command to unzip into Downloads folder [2/25/23: mbp 2019 => double clicked on tar.gz file to extract]
+- Moved newly created apache-mavin-3.8.6 folder to ~/swtool
+- Added the following to ~/.zshrc
 ```
 MAVEN_HOME=~/swtool/apache-maven-3.8.6
 export PATH=$MAVEN_HOME/bin:$PATH
@@ -139,4 +140,10 @@ NOTE: This command support multiple file formats and might not be a .pem file. I
 
 In the JLV code, you will want to update the properties file.  
 
-The only property file you should need to modify is **application-development.propeties** (or production) and the only property that should be modified for a basic setup is the jMeadows URL. Set it to your local instance if you have one, or you can get the silver instance config from another developer.
+The only property file you should need to modify is:
+> application-development.propeties (or application-production.properties)
+
+The only property that should be modified for a basic setup is the:
+> jMeadows URL
+
+Set it to your local instance if you have one, or you can get the silver instance config from another developer.  
