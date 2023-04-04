@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Working with Branches - CPS Handbook</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00_intro/introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../01_git/git_for_people.html"><strong aria-hidden="true">1.</strong> Git for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_git/getting_started.html"><strong aria-hidden="true">1.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../01_git/git_branches.html" class="active"><strong aria-hidden="true">1.2.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="../01_git/git_flow.html"><strong aria-hidden="true">1.3.</strong> Git Flow</a></li></ol></li><li class="chapter-item expanded "><a href="../02_cpp/cpp_for_people.html"><strong aria-hidden="true">2.</strong> C++ for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_cpp/getting_started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li></ol></li><li class="chapter-item expanded "><a href="../03_java/java_for_people.html"><strong aria-hidden="true">3.</strong> Java for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_java/getting_started.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../03_java/writing_code.html"><strong aria-hidden="true">3.2.</strong> Writing Code</a></li><li class="chapter-item expanded "><a href="../03_java/compiling_code.html"><strong aria-hidden="true">3.3.</strong> Compiling Code</a></li></ol></li><li class="chapter-item expanded "><a href="../04_lamp/lamp_for_people.html"><strong aria-hidden="true">4.</strong> LAMP for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_lamp/getting_started.html"><strong aria-hidden="true">4.1.</strong> Getting Started</a></li></ol></li><li class="chapter-item expanded "><a href="../05_rust/rust_for_people.html"><strong aria-hidden="true">5.</strong> Rust for People</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05_rust/subsection_two.html"><strong aria-hidden="true">5.1.</strong> Rust Sub Section 2</a></li></ol></li><li class="chapter-item expanded "><a href="../06_jlv/jlv_dev_setup.html"><strong aria-hidden="true">6.</strong> JLV Dev Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06_jlv/java_setup.html"><strong aria-hidden="true">6.1.</strong> Java Setup</a></li><li class="chapter-item expanded "><a href="../06_jlv/apache_tomcat.html"><strong aria-hidden="true">6.2.</strong> Apache Tomcat</a></li><li class="chapter-item expanded "><a href="../06_jlv/apache_groovy.html"><strong aria-hidden="true">6.3.</strong> Apache Groovy</a></li><li class="chapter-item expanded "><a href="../06_jlv/node_setup.html"><strong aria-hidden="true">6.4.</strong> Node</a></li><li class="chapter-item expanded "><a href="../06_jlv/source_code.html"><strong aria-hidden="true">6.5.</strong> Source Code</a></li><li class="chapter-item expanded "><a href="../06_jlv/environment.html"><strong aria-hidden="true">6.6.</strong> Environment</a></li><li class="chapter-item expanded "><a href="../06_jlv/build_deploy.html"><strong aria-hidden="true">6.7.</strong> Build and Deploy</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CPS Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="working-with-branches"><a class="header" href="#working-with-branches">Working with Branches</a></h1>
+<p>By default, when a new repository is initialized, it creates branch &quot;master&quot; (or &quot;main&quot;).</p>
+<p>Generally, the JLV/CV repositories are set up such that developers cannot work directly against the main branch. Instead, they create their own branch(es) related to their specific work. Then, their updates can be merged into the long running development branch as part of a Pull Request (PR).</p>
+<p>To create a new branch, e.g. &quot;my-branch&quot;, use the git command:</p>
+<pre><code class="language-bash">git branch my-branch
+</code></pre>
+<p>This creates a new pointer to the same commit you're currently on. Git keeps a special pointer called HEAD, which is a pointer to the local branch you're currently on. In this case, if you are currently on &quot;main&quot;, the git branch command only creates a new branch. It did not switch to that branch.</p>
+<p>You can see this by running a git log command that shows you where the branch pointers are pointing. This option is called --decorate.</p>
+<pre><code class="language-bash">git log --oneline --decorate
+</code></pre>
+<p>To switch to an existing branch, run the git checkout command, e.g.:</p>
+<pre><code class="language-bash">git checkout my-branch
+</code></pre>
+<p>This moves the HEAD to poit to the my-branch branch. Any changes made will only be visible in my-branch.</p>
+<p>You can use a shortcut command to create and switch to a new branch:</p>
+<pre><code class="language-bash">git checkout -b my-branch
+</code></pre>
+<p>To switch back to the main branch:</p>
+<pre><code class="language-bash">git checkout main
+</code></pre>
+<p>The git branch command does more than just create and delete branches. If you run it with no arguments, you get a simple listing of your current branches.</p>
+<pre><code class="language-bash">git branch
+</code></pre>
+<p>To see the last commit on each branch, run the following:</p>
+<pre><code class="language-bash">git branch -v
+</code></pre>
+<p>To see a list of all branches in the remote repository, use either of these commands:</p>
+<pre><code class="language-bash">git branch --all
+git branch -r
+</code></pre>
+<p>The  --merged and --unmerged options can filter this list to branches you have or have not yet merged into the branch you're currently on.</p>
+<pre><code class="language-bash">git branch --merged
+git branch --no-merged
+</code></pre>
+<p>To delete a local branch, run the following:</p>
+<pre><code class="language-bash">git branch -d &lt;local-branch&gt;
+</code></pre>
+<p>To push the current branch and set the remote as upstream, use one of the following:</p>
+<pre><code class="language-bash">git push --set-upstream origin cps-development
+git push -u origin cps-development
+</code></pre>
+<h3 id="jlv-project-format-for-branches"><a class="header" href="#jlv-project-format-for-branches">JLV Project Format for Branches</a></h3>
+<p>All work should be tied to a Jira issue. Work done against the Jira issues should be done within a feature branch that references the Jira item. The format is &quot;issue-type&quot;-jp-&quot;issue-id&quot;.</p>
+<p>For example:</p>
+<pre><code class="language-bash">git branch task-jp-1234
+git branch subtask-jp-23456
+git branch nfr-jp-6789
+</code></pre>
+<h3 id="sync-local-branch-with-specific-remote-branch"><a class="header" href="#sync-local-branch-with-specific-remote-branch">Sync Local Branch with Specific Remote Branch</a></h3>
+<h3 id="clone-repository-at-specified-branch"><a class="header" href="#clone-repository-at-specified-branch">Clone Repository at Specified Branch</a></h3>
+<p>Command to clone a repository at a specific branch and only fetch that branch.</p>
+<pre><code class="language-bash">git clone -b &lt;branchname&gt; --single-branch &lt;remote-repo-url&gt;
+</code></pre>
+<p>For example:</p>
+<pre><code class="language-bash">git clone -b develop --single-branch https://github.com/department-of-veterans-affairs/jlv-code.git
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../01_git/getting_started.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../01_git/git_flow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../01_git/getting_started.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../01_git/git_flow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
