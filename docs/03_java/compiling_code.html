@@ -4,8 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Compiling Code - CPS Handbook</title>
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -16,25 +18,29 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -50,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -62,12 +68,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -83,7 +91,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -93,7 +101,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -110,6 +118,7 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -123,8 +132,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -138,24 +148,36 @@
 <h4 id="simple-command"><a class="header" href="#simple-command">Simple Command</a></h4>
 <p>Begin by navigating to the &quot;src&quot; folder of your project.<br />
 Then, run the command below.</p>
-<pre><code class="language-bash">javac ClassOne.java ClassTwo.java 
+<pre><code class="language-zsh">javac ClassOne.java ClassTwo.java 
 </code></pre>
 <h4 id="output-compiled-artifacts-to-target-folder"><a class="header" href="#output-compiled-artifacts-to-target-folder">Output Compiled Artifacts to Target Folder</a></h4>
 <p>To direct the compiled classes to a specified folder, use the -d parameter, as shown below.</p>
-<pre><code class="language-bash">javac -d ../target ClassOne.java ClassTwo.java 
+<pre><code class="language-zsh">javac -d ../target ClassOne.java ClassTwo.java 
+</code></pre>
+<p>A more complex compile that involves a package path off of the src folder, such as:</p>
+<pre><code class="language-zsh">trivia-game/src/com/csw/&lt;java source files&gt;
+</code></pre>
+<p>From the top-level folder (e.g., trivia-game):</p>
+<pre><code class="language-zsh">javac -d ./target ./src/com/csw/TriviaGame.java ./src/com/csw/Quiz.java
+</code></pre>
+<p>Compiles and places the new .class files in the target folder at:</p>
+<pre><code class="language-zsh">trivia-game/target/com/csw/&lt;class files&gt;
 </code></pre>
 <h3 id="run-java-program"><a class="header" href="#run-java-program">Run Java Program</a></h3>
 <h4 id="simple-command-1"><a class="header" href="#simple-command-1">Simple Command</a></h4>
 <p>Navigate to the folder where the ClassName.class file is located, then run the command:</p>
-<pre><code class="language-bash">java ClassName 
+<pre><code class="language-zsh">java ClassName 
 </code></pre>
 <h4 id="more-qualified-command"><a class="header" href="#more-qualified-command">More Qualified Command</a></h4>
 <p>To run the program from a location other than where the class file(s) live, you can provide a more qualified command.</p>
 <p>For example, to execute the class from the src folder, you can use one of the commands below.</p>
-<pre><code class="language-bash">java -classpath ../target ClassOne
+<pre><code class="language-zsh">java -classpath ../target ClassOne
 java -cp ../target ClassOne
 java -classpath ../target com.csylvester.app.ClassOne
 java -cp ../target com.csylvester.app.ClassOne
+</code></pre>
+<p>To run the more complicated structure executable from the top-level folder (e.g., trivia-game):</p>
+<pre><code class="language-zsh">java -cp ./target com.csw.TriviaGame
 </code></pre>
 
                     </main>
@@ -165,9 +187,11 @@ java -cp ../target com.csylvester.app.ClassOne
                             <a rel="prev" href="../03_java/writing_code.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../04_lamp/lamp_for_people.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -177,6 +201,7 @@ java -cp ../target com.csylvester.app.ClassOne
                     <a rel="prev" href="../03_java/writing_code.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../04_lamp/lamp_for_people.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -185,7 +210,7 @@ java -cp ../target com.csylvester.app.ClassOne
         </div>
 
         <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
+        <script>
             const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
             const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
             const socket = new WebSocket(wsAddress);
@@ -200,16 +225,25 @@ java -cp ../target com.csylvester.app.ClassOne
                 socket.close();
             }
         </script>
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
+
+    </div>
     </body>
 </html>
