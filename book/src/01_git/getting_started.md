@@ -1,12 +1,19 @@
 # Getting Started
 
 ### Set up Git
-Set up basic information about yourself and how you want to work with Git.  
+
+Set up basic information about yourself and how you want to work with Git.
 
 ```bash
 git config --global user.name "Chuck Sylvester"
 git config --global user.email charles.sylvester@va.gov
 git config --global color.ui true
+```
+
+Another useful command when running under Windows and the repo has long filenames:
+
+```bash
+git config --global core.longpaths true
 ```
 
 To display your Git settings:
@@ -18,7 +25,8 @@ git config --global --list
 ```
 
 ### Clone Remote Repository
-How to clone a remote repository to your local instance.  
+
+How to clone a remote repository to your local instance.
 
 I have two-factor authentication enabled and a Personal Access Token, so I need to provide a more verbose version of the clone command. I typically use the HTTPS option for cloning.
 
@@ -44,5 +52,6 @@ git clone https://<personal-access-token>@github.com/department-of-veterans-affa
 ```
 
 ### Working with the .gitignore file
+
 Use # symbol for comments.  
 MacOS file type to ignore: `.DS_Store`
