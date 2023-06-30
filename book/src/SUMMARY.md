@@ -12,6 +12,7 @@
     - [Getting Started](03/getting_started.md)
     - [Writing Code](03/writing_code.md)
     - [Compiling Code](03/compiling_code.md)
+    - [Tomcat & Ant](03/tomcat_ant.md)
 - [Rust for People](04/rust_for_people.md)
     - [Rust Sub Section 2](04/subsection_two.md)
 - [JLV Dev Setup](05/jlv_dev_setup.md)
