@@ -7,13 +7,31 @@ My inclination was to go with Amazon Corretto OpenJDK 8.
 Visual Studio Code add-ins only work with Java 11 and above.  
 So, went with Amazon Corretto OpenJDK 11.  
 
+> 7/6/23 update:  
+> Running through complete installation and setup of JLV on new GFE.  
+> This time, I'll go with Amazon Corretto OpenJDK 17 on Windows.  
+> Will keep MacOS installs as is (v11).  
+
 Visited: https://aws.amazon.com/corretto/
 
-Selected: Download Amazon Corretto 11  
+**MBP**  
+Selected : Download Amazon Corretto 11  
 Selected platform: macOS aarch64  
-
 Selected the “pkg” installer file  
 amazon-corretto-11.0.15.9.1-macosx-aarch64.pkg  
+
+**GFE**  
+Selected: Download Amazon Corretto 17  
+Selected Platform: Windows x64  
+Selected the "zip" download link  
+corretto.aws > downloads > latest > amazon-corretto-17-x64-windows-jdk.zip  
+Unzipped and copied base folder to: ~/swtool/jdk17.0.7_7/  
+
+#### Environment Variable Setup
+Once the Java JDK is downloaded and unzipped, refer to the **JLV Dev Setup > Environment** page for various ways to set required environment variables for MacOS and Windows.  
+
+And for additional notes that I captured when intially setting up my Dell GFE, refer to:  
+> VA OneDrive\VA_Notes\1-JLV\gfe-notes-dev\JLV 3.0 Setup.txt
 
 ### Set Java Version
 There are multiple ways to set the desired default version, either temporarily or permanently.
