@@ -2,8 +2,19 @@
 CPS Technical Handbook (Markdown Book)
 
 ## About this Repo
-This repository serves as the root folder for developing a web version of the JLV System Design Document (SDD). The produced book / website files can be hosted on any web server or by GitHub as GitHub pages.
+This repository hosts the source code for the CPS Handbook static website, which serves as a handy reference for all of the things I do... but often forget the details. This site is created using the Rust-based `mdbook` program, which compiles markdown files into a nicely-formated website.
 ​
+## Installing mdbook
+The mdbook program is a single executable that can be located anywhere and run via a full path or by updating your path statement to include its location. In many cases, I like to go with a "portable install" setup, in which you use a single common directory location for various utility type programs.  
+
+For download and install instructions, see: [https://rust-lang.github.io/mdBook/](https://rust-lang.github.io/mdBook/).  
+
+In my case, I downloaded mdbook-v0.4.34-x86_64-apple-darwin.tar.gza, unzipped it, and copied the executable (mdbook) to ~/swtool. Then, I updated .zshrc to add ~/swtool to the path.
+
+```zsh
+export PATH=$PATH:~/swtool
+```
+
 ## Using mdbook
 The mdbook tool creates books from markdown files. The generated book is outbook to a designated folder, which can then be deployed as a static website.
 
