@@ -62,6 +62,8 @@ Then, double-click to start the installer.
 When complete, Corretto should be located on your main disk volume at:
 > Macintosh HD > Library > Java > JavaVirtualMachines
 
+_**August 23, 2023 update:**_ I've traded in my MBP 16" for a new MBA 15" (and loving it). So, I'm standing up the new machine from scratch. With this new setup, I'm upgrading to Amazon Corretto 17.  
+
 ### Set Environment Variables
 After installing Java, you will need to do some configuration, such as setting environment variables.
 
