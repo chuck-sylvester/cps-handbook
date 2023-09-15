@@ -1,6 +1,9 @@
 # Apache Tomcat
 
-Apache Tomcat 8 or 9; my preference is Tomcat v9.x
+Apache Tomcat 8 or 9; my preference is Tomcat v9.x  
+
+_September 1, 2023 update:_  
+Running through the full setup again using CAG and Windows desktop image. This time, let's go with Tomcat 10x.
 
 ### Tomcat Installation
 

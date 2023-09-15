@@ -4,7 +4,7 @@
 As outlined in *JLV Confluence Developer Handbook - Install and Run JLV 3.0*  
 By David King  
 
-Updated to reflect MacBook Pro setup
+Updated to reflect MacBook Pro setup, though I tend to switch back and forth between Mac and Windows.
 
 ## Pre-requisites
  - All of the following software needs to be downloaded and installed
