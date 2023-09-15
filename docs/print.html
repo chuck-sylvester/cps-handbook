@@ -473,7 +473,7 @@ The Gradle website recommend the use of a package manager, such as SDKMAN! or Ho
 <h2 id="install-and-configure-jlv-on-a-local-developer-machine"><a class="header" href="#install-and-configure-jlv-on-a-local-developer-machine">Install and configure JLV on a local developer machine</a></h2>
 <p>As outlined in <em>JLV Confluence Developer Handbook - Install and Run JLV 3.0</em><br />
 By David King</p>
-<p>Updated to reflect MacBook Pro setup</p>
+<p>Updated to reflect MacBook Pro setup, though I tend to switch back and forth between Mac and Windows.</p>
 <h2 id="pre-requisites"><a class="header" href="#pre-requisites">Pre-requisites</a></h2>
 <ul>
 <li>All of the following software needs to be downloaded and installed</li>
@@ -555,6 +555,8 @@ Since I’m running zsh on my mac, I must have updated .zshrc to add this settin
 I see lines in .zshrc (on one of my Macs) that indicate I’ve set the default Java version to Corretto 11.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="apache-tomcat"><a class="header" href="#apache-tomcat">Apache Tomcat</a></h1>
 <p>Apache Tomcat 8 or 9; my preference is Tomcat v9.x</p>
+<p><em>September 1, 2023 update:</em><br />
+Running through the full setup again using CAG and Windows desktop image. This time, let's go with Tomcat 10x.</p>
 <h3 id="tomcat-installation"><a class="header" href="#tomcat-installation">Tomcat Installation</a></h3>
 <p>Visited <a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a></p>
 <p><strong>MacOS Setup</strong><br />
@@ -682,6 +684,15 @@ David’s confluence page now states:</p>
 <p>The variables to set and some sample values are as follows:</p>
 <p><strong>Windows Setting</strong></p>
 <pre><code>JRE_HOME=C:\Work\jdk1.8.0_261
+JAVA_HOME=C:\Work\jdk1.8.0_261
+</code></pre>
+<p>Since I'm now accessing my VA account via CAG and a virtual desktop, there can be oddities related to environment variables and the path. Plus, the path to Java is set via the system-wide environment to point to Oracle Java 1.8. I certainly don't want that.</p>
+<p>So, I created a shell script in the <code>~/swtool</code> directory that can be run to set various environment variables, including the PATH variable to find the desired Java version.</p>
+<p>The command in the script to update the Windows/Git Bash path is:</p>
+<pre><code>set PATH=/swtool/jdk17.0.8_8/bin:$PATH
+</code></pre>
+<p>To run the script:</p>
+<pre><code>source ~/swtool/cpsetup.sh
 </code></pre>
 <p><strong>Mac Setting</strong><br />
 Added the following line to ~/.zshrc</p>
@@ -713,7 +724,7 @@ CATALINA_HOME=C:\Work\apache-tomcat-9.0.44
 CATALINA_HOME=/Library/apache-tomcat-9
 </code></pre>
 <p>Windows info:<br />
-Also updated .basrc to include the CATALINA environment variables.</p>
+Also updated .bashrc to include the CATALINA environment variables.</p>
 <p><strong>Apache Groovy Updates</strong><br />
 For a Windows install, <em>edit environment variables for your account</em> as follows:</p>
 <pre><code>GROOVY_HOME=C:\Work\groovy-3.0.7

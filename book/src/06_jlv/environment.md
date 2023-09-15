@@ -10,6 +10,23 @@ The variables to set and some sample values are as follows:
 
 ```
 JRE_HOME=C:\Work\jdk1.8.0_261
+JAVA_HOME=C:\Work\jdk1.8.0_261
+```
+
+Since I'm now accessing my VA account via CAG and a virtual desktop, there can be oddities related to environment variables and the path. Plus, the path to Java is set via the system-wide environment to point to Oracle Java 1.8. I certainly don't want that.  
+
+So, I created a shell script in the `~/swtool` directory that can be run to set various environment variables, including the PATH variable to find the desired Java version.  
+
+The command in the script to update the Windows/Git Bash path is:  
+
+```
+set PATH=/swtool/jdk17.0.8_8/bin:$PATH
+```
+
+To run the script:
+
+```
+source ~/swtool/cpsetup.sh
 ```
 
 **Mac Setting**  
@@ -68,7 +85,7 @@ CATALINA_HOME=/Library/apache-tomcat-9
 ```
 
 Windows info:  
-Also updated .basrc to include the CATALINA environment variables.
+Also updated .bashrc to include the CATALINA environment variables.
 
 **Apache Groovy Updates**  
 For a Windows install, _edit environment variables for your account_ as follows:
