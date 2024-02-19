@@ -9,7 +9,7 @@ The mdbook program is a single executable that can be located anywhere and run v
 
 For download and install instructions, see: [https://rust-lang.github.io/mdBook/](https://rust-lang.github.io/mdBook/).  
 
-In my case, I downloaded mdbook-v0.4.34-x86_64-apple-darwin.tar.gza, unzipped it, and copied the executable (mdbook) to ~/swtool. Then, I updated .zshrc to add ~/swtool to the path.
+In my case, I downloaded mdbook-v0.4.34-x86_64-apple-darwin.tar.gz, unzipped it, and copied the executable (mdbook) to ~/swtool. Then, I updated .zshrc to add ~/swtool to the path.
 
 ```zsh
 export PATH=$PATH:~/swtool
