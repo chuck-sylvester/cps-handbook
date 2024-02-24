@@ -498,6 +498,13 @@ java -cp ../target com.csylvester.app.ClassOne
 <p>This page provides information on two popular build automation tools, Maven and Gradle.</p>
 <p>Maven is the primary tool used on the VA projects that I support; however, Gradle also has a fairly large market share and user base.</p>
 <h3 id="maven"><a class="header" href="#maven">Maven</a></h3>
+<p>There are numerous options for installing Maven. I happen to be reading the book, <em>API Security In Action</em> this morning, so let's go with what the author recommends.</p>
+<p>Maven can be installed from Homebrew using the following command:</p>
+<pre><code class="language-zsh">brew install maven
+</code></pre>
+<p>To check that Maven is installed properly, run:</p>
+<pre><code class="language-zsh">mvn -version
+</code></pre>
 <h3 id="gradle"><a class="header" href="#gradle">Gradle</a></h3>
 <p><a href="https://gradle.org/">https://gradle.org/</a><br />
 The Gradle website recommend the use of a package manager, such as SDKMAN! or Homebrew. I decided to go with Homebrew.</p>
@@ -509,9 +516,18 @@ The Gradle website recommend the use of a package manager, such as SDKMAN! or Ho
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lamp-for-people"><a class="header" href="#lamp-for-people">LAMP for People</a></h1>
 <p>Things I always forget.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-3"><a class="header" href="#getting-started-3">Getting Started</a></h1>
-<h3 id="topic-one"><a class="header" href="#topic-one">Topic One</a></h3>
-<p>To show the current active Java version:</p>
-<pre><code class="language-bash">java -version
+<h2 id="setting-up-an-apache-virtual-host"><a class="header" href="#setting-up-an-apache-virtual-host">Setting up an Apache Virtual Host</a></h2>
+<p>It is recommended that you develop PHP applications in the web server default root document folder, as opposed to a subfolder. One way to achive this -- especially if you are working on multiple PHP development projects at the same time -- is to set up an Apache virtual host.</p>
+<p>For example, for the phpmvc application that I developed (per Dave Hollingworth course), I updated the <code>httpd.conf</code> file to enable virtual servers and the <code>httpd-vhosts.conf</code> file with the section of configuration code below.</p>
+<pre><code class="language-bash">&lt;VirtualHost *:80&gt;
+    ServerName phpmvc.localhost
+    ServerAlias phpmvc.localhost
+    DocumentRoot &quot;/Users/chuck/swdev/csw/phpmvc&quot;
+    &lt;Directory &quot;/Users/chuck/swdev/csw/phpmvc&quot;&gt;
+        Require all granted
+        AllowOverride All
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust-for-people"><a class="header" href="#rust-for-people">Rust for People</a></h1>
 <p>Things I always forget.</p>

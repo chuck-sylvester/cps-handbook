@@ -174,9 +174,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
-<h3 id="topic-one"><a class="header" href="#topic-one">Topic One</a></h3>
-<p>To show the current active Java version:</p>
-<pre><code class="language-bash">java -version
+<h2 id="setting-up-an-apache-virtual-host"><a class="header" href="#setting-up-an-apache-virtual-host">Setting up an Apache Virtual Host</a></h2>
+<p>It is recommended that you develop PHP applications in the web server default root document folder, as opposed to a subfolder. One way to achive this -- especially if you are working on multiple PHP development projects at the same time -- is to set up an Apache virtual host.</p>
+<p>For example, for the phpmvc application that I developed (per Dave Hollingworth course), I updated the <code>httpd.conf</code> file to enable virtual servers and the <code>httpd-vhosts.conf</code> file with the section of configuration code below.</p>
+<pre><code class="language-bash">&lt;VirtualHost *:80&gt;
+    ServerName phpmvc.localhost
+    ServerAlias phpmvc.localhost
+    DocumentRoot &quot;/Users/chuck/swdev/csw/phpmvc&quot;
+    &lt;Directory &quot;/Users/chuck/swdev/csw/phpmvc&quot;&gt;
+        Require all granted
+        AllowOverride All
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
 </code></pre>
 
                     </main>
