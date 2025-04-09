@@ -45,24 +45,25 @@ source .bash_profile
 This command reads and executes the .bash_profile in the currently running shell.
 
 ### Install Java
-My inclination was to go with Amazon Corretto OpenJDK 8. However, Visual Studio Code add-ins only work with Java 11 and above.
+My go to OpenJDK lately is Amazon Corretto... despite my personal feelings about Amazon and Jeff Bezos.
 
-So, went with Amazon Corretto OpenJDK 11.
+I've also settled on v17 as the baseline version.
 
 ```bash
 https://aws.amazon.com/corretto/
-https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html
+https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html
 ```
 
-Download the appropriate installer package, e.g.:
-> amazon-corretto-11.0.12.7.2-macosx-x64.pkg
+Download the appropriate installer package, e.g., **amazon-corretto-17.0.14.7.1-macosx-aarch64.pkg**
+
+```bash
+https://corretto.aws/downloads/latest/amazon-corretto-17-aarch64-macos-jdk.pkg
+```
 
 Then, double-click to start the installer.
 
 When complete, Corretto should be located on your main disk volume at:
 > Macintosh HD > Library > Java > JavaVirtualMachines
-
-_**August 23, 2023 update:**_ I've traded in my MBP 16" for a new MBA 15" (and loving it). So, I'm standing up the new machine from scratch. With this new setup, I'm upgrading to Amazon Corretto 17.  
 
 ### Set Environment Variables
 After installing Java, you will need to do some configuration, such as setting environment variables.
@@ -70,10 +71,13 @@ After installing Java, you will need to do some configuration, such as setting e
 Add the following lines to ~/.zshrc
  - create file if it doesn't exist
  - not sure why export statement is used for one of the two lines
+ - **_Actually_, I did not need to add this to .zshr for the OS to find Java**
+ - But, just in case, I'm leaving the info below.
+
 ```bash
 # Set Java version to Corretto 11
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-JRE_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+JRE_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
 ```
 
-*Done and Dusted*
+_Done and Dusted_
